@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  # If you want to use SSL.
+  #RewriteCond %{HTTPS} off
+  #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+  RewriteRule ^([a-f0-9]{16})$ index.php?f=$1 [L]
+  RewriteRule ^(up|list)$ $1.php [L]
+</IfModule>
